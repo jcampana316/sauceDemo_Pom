@@ -12,4 +12,9 @@ public class ShoppingCartSteps  extends UIInteractionSteps {
     public void validateCheckoutButton() {
         shoppingCartPage.validateCheckoutButton();
     }
+
+    @Step("Presiono boton checkout")
+    public void clickCheckoutButton() {
+        shoppingCartPage.initiateCheckout();
+    }
 }

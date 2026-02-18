@@ -1,5 +1,6 @@
 package saucedemo.stepdefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -44,6 +45,11 @@ public class LoginStepsDefinitions {
     @Then ("el usuario es redirigido a la pagina de login")
     public void shouldSeeLogin() {
         navigation.shouldRedirectToLogin();
+    }
+
+    @Given("el usuario ingresa credenciales validos")
+    public void enterValidCredentials(DataTable datos) throws Throwable {
+        navigation.ingresarCredenciales(datos);
     }
 
 }

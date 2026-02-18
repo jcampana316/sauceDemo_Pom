@@ -14,7 +14,7 @@ public class InventoryStepsDefinitions {
     InventoryNavigationSteps  inventoryNavigation;
     ShoppingCartSteps shoopingCartNavigation;
 
-    @Given("usuario se encuentra en el catalogo")
+    @Given("el usuario se encuentra en el catalogo")
     public void validateUserInCatalog(){
         inventoryNavigation.shouldSeeInventoryTitle();
     }
@@ -34,6 +34,12 @@ public class InventoryStepsDefinitions {
     public void validateCheckoutButton(){
         shoopingCartNavigation.validateCheckoutButton();
     }
+
+    @And("inicio el proceso de checkout")
+    public void clickCheckoutButton(){
+        shoopingCartNavigation.clickCheckoutButton();
+    }
+
 
 
 }

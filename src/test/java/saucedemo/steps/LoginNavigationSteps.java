@@ -1,5 +1,6 @@
 package saucedemo.steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import lombok.extern.slf4j.Slf4j;
 import net.serenitybdd.annotations.Step;
@@ -39,8 +40,11 @@ public class LoginNavigationSteps extends UIInteractionSteps {
 
         Assertions.assertThat(loginPage.isLoginRedirectSuccesful())
                         .as("Se regreso al Login").isTrue();
+    }
 
-
-
+    public void ingresarCredenciales(DataTable datos) throws Throwable {
+        String user = datos.cell(1,0);
+        String password = datos.cell(1,1);
+        typeUserData(user,password);
     }
 }
